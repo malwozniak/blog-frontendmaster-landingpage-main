@@ -1,0 +1,124 @@
+* {
+  font-size: 16px;
+  font-family: 'Overpass';
+  font-weight: 300;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  color: white;
+  background: #ff8f70;
+  background-image: url("../images/bg-pattern-intro.svg");
+  background-image: url("../images/bg-pattern-intro.svg") linear-gradient(45deg, #ff8f70 50%, #ff3d54 100%);
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 10%;
+  background-position: 0% 51%;
+  background-size: 138vw;
+  height: 50vh;
+}
+
+header ul {
+  -ms-grid-columns: (5vw)[4] (15vw)[2];
+      grid-template-columns: repeat(4, 5vw) repeat(2, 15vw);
+  row-gap: 15px;
+}
+
+header ul > ul {
+  -ms-grid-columns: 100px;
+      grid-template-columns: 100px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 15px;
+  cursor: pointer;
+}
+
+header ul > ul:hover {
+  visibility: visible;
+}
+
+header ul > ul > li {
+  visibility: hidden;
+  -ms-grid-columns: 100px;
+      grid-template-columns: 100px;
+  row-gap: 30px;
+  cursor: pointer;
+}
+
+header div {
+  z-index: 2;
+  text-align: center;
+}
+
+header div p {
+  font-size: 5vw;
+}
+
+header div span {
+  font-size: 2vw;
+}
+
+header a {
+  z-index: 2;
+  text-decoration: none;
+  place-content: center;
+}
+
+header a > span:first-child {
+  display: inline-block;
+  color: white;
+  width: 10rem;
+  height: 2.5rem;
+  line-height: 40px;
+  border: 2px solid white;
+  border-radius: 18px;
+  text-align: center;
+}
+
+nav {
+  -ms-grid-columns: 10vw 10vw;
+      grid-template-columns: 10vw 10vw;
+  padding: 50px 17rem 0 17rem;
+  padding: 50px 17vw 0 17vw;
+}
+
+nav:first-child {
+  font-size: 3vw;
+}
+
+nav li {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section img {
+  width: 10%;
+}
+
+footer {
+  background-color: #3f4164;
+}
+
+footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .attribution {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=style.css.map */
