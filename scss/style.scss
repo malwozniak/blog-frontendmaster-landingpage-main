@@ -1,0 +1,148 @@
+$lightred: hsl(356, 100%, 66%);
+$verylightred: hsl(355, 100%, 74%);
+$verydarkblue:  hsl(208, 49%, 24%);
+$white: hsl(0, 0%, 100%);
+$footertext:hsl(240, 2%, 79%);
+$bodycopy: hsl(207, 13%, 34%);
+$footerbackground:  hsl(240, 10%, 16%);
+$gradvlightred:hsl(13, 100%, 72%);
+$gradlightred: hsl(353, 100%, 62%);
+$verydarkdeblue: hsl(237, 23%, 32%);
+$verydarkgblue: hsl(237, 17%, 21%);
+$container-widths: (
+        mobile: 360px,
+        mobile--large: 480px,
+        tablet: 720px,
+        tablet--large: 960px,
+        desktop: 1160px,
+);
+// Device break-points
+//
+// Define device break-points. Must start with a breakpoint of 0 &
+// values must be ascending.
+
+$grid-breakpoints: (
+        reset: 0,
+        mobile: 424px,
+        mobile--large: 544px,
+        tablet: 784px,
+        tablet--large: 1024px,
+        desktop: 1200px,
+);
+// Columns
+//
+// Specify amount of columns and the size of the gap.
+$columns: 12;
+$column-gap: 2rem;
+@mixin device-up($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @if if(0 != $min, $min, null) {
+      @media (min-width: $min) {
+        @content;
+      }
+    } @else {
+      @content;
+    }
+  }
+
+
+* {
+    font-size: 16px;
+    font-family: 'Overpass';
+    font-weight: 300;
+    display: grid;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    color: $white;
+    background: rgb(255,143,112);
+//background: linear-gradient(90deg, rgba(255,143,112,1) 0%, rgba(254,134,109,1) 62%, rgba(251,98,98,1) 100%);
+    background-image: url("../images/bg-pattern-intro.svg");
+    background-image: url("../images/bg-pattern-intro.svg")
+    linear-gradient(45deg, #ff8f70 50%, #ff3d54 100%);
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 10%;
+  background-position: 0% 51%;
+  background-size: 138vw;
+  height: 50vh;
+ 
+    ul{
+        grid-template-columns: repeat(4,5vw) repeat(2,15vw);
+        row-gap: 15px;
+        & > ul{
+        grid-template-columns: 100px ;
+ 
+        column-gap: 10px;
+        row-gap: 15px;
+        cursor: pointer;
+        &:hover{
+            visibility: visible;
+        }
+        & >li{
+            visibility:hidden;
+            grid-template-columns: 100px;
+            row-gap: 30px;
+            cursor: pointer;
+            
+            }
+        }
+
+    }
+    div{
+        z-index:2;
+        text-align: center;
+        p{font-size: 5vw;}
+        span{font-size:2vw;}
+    }
+    a {
+        z-index:2;
+        text-decoration: none;
+        place-content: center;
+        
+        
+      & > span:first-child {
+        display: inline-block;
+        color:white;
+        width: 10rem;
+        height: 2.5rem;
+        line-height: 40px;
+        border: 2px solid white;
+        //background: #fff;
+        border-radius: 18px;
+        text-align: center;
+      }
+    }
+    
+}
+nav{
+   
+    grid-template-columns: 10vw 10vw;
+    padding: 50px 17rem 0 17rem;
+    padding: 50px 17vw 0 17vw;
+ &:first-child{
+     font-size: 3vw;
+ }
+ li{
+     justify-content: center;
+ }
+}
+section{
+    img{
+        width: 10%;
+    }
+}
+footer{
+    background-color: $verydarkdeblue;
+    ul{
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .attribution{
+        display: flex;
+        justify-content: center;
+    }
+}
